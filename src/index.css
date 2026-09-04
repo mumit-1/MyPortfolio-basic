@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Single theme: monochrome CRT. Black ground, gray mid-tones, white as the
+     only "accent" — the glow stands in for what used to be neon colour. */
+  :root {
+    color-scheme: dark;
+
+    --bg: #050505;
+    --surface: #0c0c0c;
+    --card: #111111;
+    --border: #2a2a2a;
+    --fg: #f5f5f5;
+    --muted: #8f8f8f;
+    --soft: #8f8f8f; /* legacy alias */
+
+    /* White is the accent; accent-2 is the dimmed step below it. */
+    --accent: #ffffff;
+    --accent-2: #bdbdbd;
+
+    --grad: linear-gradient(115deg, #6e6e6e 0%, #dcdcdc 52%, #ffffff 100%);
+    --grad-soft: linear-gradient(
+      115deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.12)
+    );
+
+    /* Atmosphere strengths */
+    --glow: rgba(255, 255, 255, 0.4);
+    --grid-line: rgba(255, 255, 255, 0.085);
+    --scan-opacity: 0.05;
+    --grain-opacity: 0.04;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.02;
+  }
+
+  ::selection {
+    background: #ffffff;
+    color: #050505;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer utilities {
+  .text-soft {
+    color: var(--muted);
+  }
+
+  .text-gradient {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-grad {
+    background: var(--grad);
+  }
+
+  .bg-grad-soft {
+    background: var(--grad-soft);
+  }
+
+  /* 1px gradient border via padding-box + border-box trick */
+  .border-grad {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      var(--grad) border-box;
+  }
+
+  .eyebrow {
+    font-family: 'Share Tech Mono', 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+  }
+
+  /* Phosphor bloom. Deliberately restrained — white blooms much harder than a
+     saturated hue, and heavy glow turns light weights to mush. */
+  .text-neon {
+    text-shadow:
+      0 0 6px rgba(255, 255, 255, 0.24),
+      0 0 24px rgba(255, 255, 255, 0.14);
+  }
+
+  /* Reusable outlined surface */
+  .panel {
+    background: color-mix(in srgb, var(--card) 88%, transparent);
+    border: 1px solid var(--border);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+
+  /* Faint perspective-free grid wash used behind sections */
+  .bg-grid {
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 52px 52px;
+  }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
