@@ -1,12 +1,12 @@
 // Single source of truth for all site content. Edit here to update the site.
-
+// import { FileDown,FileText } from 'lucide-react'
 export const site = {
   name: 'Mumit Khan',
   monogram: 'MK',
-  role: 'Full-Stack Developer',
+  role: 'Web Developer',
   // Cycled by the hero's Morphing Text — first entry stays the canonical headline.
   roles: [
-    'Full-Stack Developer',
+    'Web Developer',
     'React Engineer',
     'Interface Builder',
     'CSE @ BRAC',
@@ -141,13 +141,19 @@ export const site = {
     { label: 'GitHub', handle: 'mumit-1', href: 'https://github.com/mumit-1', icon: 'github' },
     { label: 'LinkedIn', handle: 'in/mumit', href: 'https://www.linkedin.com/in/mumit', icon: 'linkedin' },
     { label: 'Email', handle: 'mumitkhan85@gmail.com', href: 'mailto:mumitkhan85@gmail.com', icon: 'mail' },
-    { label: 'WhatsApp', handle: '+880 1331-364480', href: 'https://wa.me/8801331364480', icon: 'whatsapp' },
+    // { label: 'WhatsApp', handle: '+880 1331-364480', href: 'https://wa.me/8801331364480', icon: 'whatsapp' },
     { label: 'Instagram', handle: '@mumittt_', href: 'https://www.instagram.com/mumittt_/', icon: 'instagram' },
     {
       label: 'Facebook',
-      handle: 'Profile',
+      handle: 'Mumit Khan',
       href: 'https://www.facebook.com/profile.php?id=100076425950558',
       icon: 'facebook',
     },
+    {
+  label: 'Resume',
+  handle: 'Download CV (PDF)',
+  href: '/Mumit_CV.pdf',
+  icon: 'resume', // import { FileDown } from 'lucide-react'
+}
   ],
 }

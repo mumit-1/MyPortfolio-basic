@@ -1,4 +1,4 @@
-import { FiFacebook, FiGithub, FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi'
+import { FiFacebook, FiGithub, FiInstagram, FiLinkedin, FiMail,FiFileText  } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 import Section from './ui/Section'
 import BlurFade from './ui/BlurFade'
@@ -13,6 +13,7 @@ const ICONS = {
   whatsapp: FaWhatsapp,
   instagram: FiInstagram,
   facebook: FiFacebook,
+  resume: FiFileText,
 }
 
 /** Contact — one loud way in, then every other door as a pixel card. */
@@ -71,7 +72,9 @@ export default function Contact() {
             </BlurFade>
           )
         })}
+       
       </div>
+      
     </Section>
   )
 }
