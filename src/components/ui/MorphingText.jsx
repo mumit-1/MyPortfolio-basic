@@ -1,16 +1,10 @@
 import { useCallback, useEffect, useRef } from 'react'
 import { cn } from '../../lib/cn'
 
-/**
- * Morphing Text (MagicUI) — crossfades a list of strings with a gooey blur
- * threshold. Ported TS→JSX: cn from local lib, v3 arbitrary filter class.
- * Falls back to a static first label under prefers-reduced-motion.
- */
-
 const morphTime = 1.5
 const cooldownTime = 0.5
 
-function useMorphingText(texts, enabled) {
+function useMorphingText(texts, enabled, isMobile) {  // <-- add isMobile param
   const textIndexRef = useRef(0)
   const morphRef = useRef(0)
   const cooldownRef = useRef(0)
@@ -23,15 +17,26 @@ function useMorphingText(texts, enabled) {
       const current1 = text1Ref.current
       const current2 = text2Ref.current
       if (!current1 || !current2) return
-      current2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`
-      current2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`
-      const inv = 1 - fraction
-      current1.style.filter = `blur(${Math.min(8 / inv - 8, 100)}px)`
-      current1.style.opacity = `${Math.pow(inv, 0.4) * 100}%`
-      current1.textContent = texts[textIndexRef.current % texts.length]
-      current2.textContent = texts[(textIndexRef.current + 1) % texts.length]
+
+      if (isMobile) {
+        // cheap version: opacity only, no blur
+        current2.style.opacity = `${fraction * 100}%`
+        const inv = 1 - fraction
+        current1.style.opacity = `${inv * 100}%`
+        current1.textContent = texts[textIndexRef.current % texts.length]
+        current2.textContent = texts[(textIndexRef.current + 1) % texts.length]
+      } else {
+        // original blur version
+        current2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`
+        current2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`
+        const inv = 1 - fraction
+        current1.style.filter = `blur(${Math.min(8 / inv - 8, 100)}px)`
+        current1.style.opacity = `${Math.pow(inv, 0.4) * 100}%`
+        current1.textContent = texts[textIndexRef.current % texts.length]
+        current2.textContent = texts[(textIndexRef.current + 1) % texts.length]
+      }
     },
-    [texts],
+    [texts, isMobile], // <-- add isMobile here
   )
 
   const doMorph = useCallback(() => {
@@ -61,7 +66,6 @@ function useMorphingText(texts, enabled) {
   useEffect(() => {
     if (!enabled) return
     let raf
-    // reset the delta clock on (re)start so the first frame's dt is tiny
     timeRef.current = new Date()
     morphRef.current = 0
     cooldownRef.current = 0
@@ -104,7 +108,13 @@ export default function MorphingText({ texts, className }) {
     window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-  const { text1Ref, text2Ref } = useMorphingText(texts, !reduced)
+  // add this: detect mobile
+  const isMobile =
+    typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(max-width: 640px)').matches
+
+  const { text1Ref, text2Ref } = useMorphingText(texts, !reduced, isMobile) // <-- pass isMobile
 
   if (reduced) {
     return (
@@ -117,19 +127,20 @@ export default function MorphingText({ texts, className }) {
   return (
     <div
       className={cn(
-        'relative mx-auto h-14 w-full text-center [filter:url(#threshold)_blur(0.6px)]',
+        'relative mx-auto h-14 w-full text-center',
+        !isMobile && '[filter:url(#threshold)_blur(0.6px)]', // <-- skip SVG filter on mobile
         className,
       )}
     >
       <span
         ref={text1Ref}
-        className="absolute inset-x-0 top-0 m-auto inline-block w-full"
+        className="absolute inset-x-0 top-0 m-auto inline-block w-full will-change-[opacity,filter]"
       />
       <span
         ref={text2Ref}
-        className="absolute inset-x-0 top-0 m-auto inline-block w-full"
+        className="absolute inset-x-0 top-0 m-auto inline-block w-full will-change-[opacity,filter]"
       />
-      <SvgFilters />
+      {!isMobile && <SvgFilters />}
     </div>
   )
 }
