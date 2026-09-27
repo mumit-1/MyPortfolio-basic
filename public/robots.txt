@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mumit-khan.web.app/sitemap.xml
+Sitemap: https://mumitkhan.vercel.app/sitemap.xml
