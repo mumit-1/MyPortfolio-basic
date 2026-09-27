@@ -75,8 +75,13 @@ export default function Hero({ ready = true }) {
         {/* the name — a hairline that thickens and widens under the cursor.
             No glow here on purpose: bloom on a 100-weight stroke turns it to mush. */}
         <motion.div className="mt-6" {...rise(0.14)}>
+          {/* sr-only h1 always present so crawlers and screen readers get the name
+              regardless of whether TextPressure (canvas) or the static heading is shown */}
+          {interactiveHero && (
+            <h1 className="sr-only">{site.name} — {site.role}</h1>
+          )}
           {interactiveHero ? (
-            <div className="h-[clamp(56px,13.5vw,180px)] w-full">
+            <div className="h-[clamp(56px,13.5vw,180px)] w-full" aria-hidden>
               <TextPressure
                 text={site.name}
                 fontFamily="Archivo"

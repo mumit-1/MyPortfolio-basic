@@ -4,25 +4,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/jpeg" href="/profile.jpeg" />
 
+  <!-- ─── Primary SEO ─────────────────────────────────────────────────── -->
   <title>Mumit Khan — Web Developer</title>
   <meta name="description"
-    content="Mumit Khan — Web developer and CSE student at BRAC University, Dhaka. React, JavaScript, and high-contrast black-and-white web interfaces." />
+    content="Mumit Khan — React web developer and CSE student at BRAC University, Dhaka. I build fast, responsive interfaces with React, JavaScript, and Tailwind CSS." />
   <meta name="author" content="Mumit Khan" />
+  <meta name="keywords"
+    content="Mumit Khan, web developer, React developer, JavaScript, Tailwind CSS, BRAC University, Dhaka, frontend developer, portfolio" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mumit-khan.web.app/" />
   <meta name="theme-color" content="#050505" />
 
-  <!-- Open Graph -->
+  <!-- ─── Open Graph (Facebook, LinkedIn, WhatsApp …) ─────────────────── -->
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mumit-khan.web.app/" />
+  <meta property="og:site_name" content="Mumit Khan" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Mumit Khan — Web Developer" />
-  <meta property="og:description" content="Web developer and CSE student at BRAC University. See my work." />
-  <meta property="og:image" content="/" />
+  <meta property="og:description"
+    content="React web developer and CSE student at BRAC University. I build fast, responsive interfaces — see my work." />
+  <meta property="og:image" content="https://mumit-khan.web.app/profile.jpeg" />
+  <meta property="og:image:alt" content="Mumit Khan — Web Developer" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-  <!-- Fonts: Archivo (display/wordmark — variable width + weight, 100..900 so
-         the hero can go hairline-thin), Inter (body), JetBrains Mono (utility),
-         Share Tech Mono (terminal / preloader) -->
+  <!-- ─── Twitter / X card ─────────────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mumit Khan — Web Developer" />
+  <meta name="twitter:description"
+    content="React web developer and CSE student at BRAC University. I build fast, responsive interfaces — see my work." />
+  <meta name="twitter:image" content="https://mumit-khan.web.app/profile.jpeg" />
+  <meta name="twitter:image:alt" content="Mumit Khan — Web Developer" />
+
+  <!-- ─── Favicons ──────────────────────────────────────────────────────── -->
+  <link rel="icon" type="image/jpeg" href="/profile.jpeg" />
+  <link rel="apple-touch-icon" href="/profile.jpeg" />
+
+  <!-- ─── JSON-LD structured data ──────────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mumit Khan",
+    "url": "https://mumit-khan.web.app/",
+    "image": "https://mumit-khan.web.app/profile.jpeg",
+    "jobTitle": "Web Developer",
+    "description": "React web developer and CSE student at BRAC University, Dhaka. I build fast, responsive web interfaces.",
+    "email": "mumitkhan85@gmail.com",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "BRAC University",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dhaka",
+        "addressCountry": "BD"
+      }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dhaka",
+      "addressCountry": "BD"
+    },
+    "sameAs": [
+      "https://github.com/mumit-1",
+      "https://www.linkedin.com/in/mumit",
+      "https://www.instagram.com/mumittt_/"
+    ],
+    "knowsAbout": ["React", "JavaScript", "Tailwind CSS", "Firebase", "Vite", "Framer Motion", "Web Development"]
+  }
+  </script>
+
+  <!-- ─── Fonts ─────────────────────────────────────────────────────────
+       Archivo (display/wordmark — variable width + weight, 100..900 so
+       the hero can go hairline-thin), Inter (body), JetBrains Mono (utility),
+       Share Tech Mono (terminal / preloader)
+  ────────────────────────────────────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <!-- preload the font stylesheet so the browser fetches it in parallel with
+       other critical resources rather than waiting for the parser to reach it -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Share+Tech+Mono&display=swap" />
   <link
     href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Share+Tech+Mono&display=swap"
     rel="stylesheet" />
