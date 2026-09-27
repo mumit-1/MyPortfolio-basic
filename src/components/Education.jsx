@@ -44,7 +44,7 @@ export default function Education() {
                 {school}
               </p>
               <p className="text-[var(--fg)]">{degree}</p>
-              <p className="text-soft">
+              <p className="text-soft ">
                 {period} · {location}
               </p>
             </div>
