@@ -21,7 +21,7 @@ export default function Footer() {
           className="group inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-5 py-2.5 font-term text-xs uppercase tracking-[0.16em] text-soft transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
         >
           <FiArrowUp className="transition-transform group-hover:-translate-y-0.5" />
-          back to top
+          back to Top
         </a>
       </div>
     </footer>
