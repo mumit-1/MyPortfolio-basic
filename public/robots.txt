@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /node_modules/
 
+# Sitemap
 Sitemap: https://mumitkhan.vercel.app/sitemap.xml
+
+# Crawl-delay (optional — be polite)
+Crawl-delay: 5

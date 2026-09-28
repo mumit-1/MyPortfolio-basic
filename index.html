@@ -6,54 +6,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ─── Primary SEO ─────────────────────────────────────────────────── -->
-  <title>Mumit Khan — Web Developer</title>
+  <title>Mumit Khan | React & Web Developer — BRAC University</title>
   <meta name="description"
-    content="Mumit Khan — React web developer and CSE student at BRAC University, Dhaka. I build fast, responsive interfaces with React, JavaScript, and Tailwind CSS." />
+    content="Mumit Khan is a React and JavaScript web developer and CSE student at BRAC University, Dhaka, Bangladesh. Portfolio of fast, responsive web interfaces built with React, Tailwind CSS, and Firebase." />
   <meta name="author" content="Mumit Khan" />
   <meta name="keywords"
-    content="Mumit Khan, web developer, React developer, JavaScript, Tailwind CSS, BRAC University, Dhaka, frontend developer, portfolio" />
-  <meta name="robots" content="index, follow" />
+    content="Mumit Khan, Mumit Khan web developer, Mumit Khan React developer, Mumit Khan BRAC University, Mumit Khan portfolio, Mumit Khan Dhaka, mumitkhan, web developer Bangladesh, React developer Dhaka, frontend developer BRAC, JavaScript developer Bangladesh" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://mumitkhan.vercel.app/" />
   <meta name="theme-color" content="#050505" />
 
+  <!-- ─── Identity / rel=me (helps Google associate social profiles) ─── -->
+  <link rel="me" href="https://github.com/mumit-1" />
+  <link rel="me" href="https://www.linkedin.com/in/mumit" />
+  <link rel="me" href="mailto:mumitkhan85@gmail.com" />
+
   <!-- ─── Open Graph (Facebook, LinkedIn, WhatsApp …) ─────────────────── -->
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:profile:first_name" content="Mumit" />
+  <meta property="og:profile:last_name" content="Khan" />
   <meta property="og:url" content="https://mumitkhan.vercel.app/" />
   <meta property="og:site_name" content="Mumit Khan" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Mumit Khan — Web Developer" />
+  <meta property="og:title" content="Mumit Khan | React & Web Developer" />
   <meta property="og:description"
-    content="React web developer and CSE student at BRAC University. I build fast, responsive interfaces — see my work." />
+    content="Mumit Khan — React and JavaScript developer, CSE student at BRAC University, Dhaka. Building fast, responsive web interfaces." />
   <meta property="og:image" content="https://mumitkhan.vercel.app/profile.jpeg" />
-  <meta property="og:image:alt" content="Mumit Khan — Web Developer" />
+  <meta property="og:image:alt" content="Mumit Khan — React Web Developer" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <!-- ─── Twitter / X card ─────────────────────────────────────────────── -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mumit Khan — Web Developer" />
+  <meta name="twitter:title" content="Mumit Khan | React & Web Developer" />
   <meta name="twitter:description"
-    content="React web developer and CSE student at BRAC University. I build fast, responsive interfaces — see my work." />
+    content="Mumit Khan — React developer and CSE student at BRAC University, Dhaka. See my projects and skills." />
   <meta name="twitter:image" content="https://mumitkhan.vercel.app/profile.jpeg" />
-  <meta name="twitter:image:alt" content="Mumit Khan — Web Developer" />
+  <meta name="twitter:image:alt" content="Mumit Khan — React Web Developer" />
 
   <!-- ─── Favicons ──────────────────────────────────────────────────────── -->
   <link rel="icon" type="image/jpeg" href="/profile.jpeg" />
   <link rel="apple-touch-icon" href="/profile.jpeg" />
 
-  <!-- ─── JSON-LD structured data ──────────────────────────────────────── -->
+  <!-- ─── JSON-LD: Person (primary — name-search anchor) ──────────────── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://mumitkhan.vercel.app/#person",
     "name": "Mumit Khan",
+    "givenName": "Mumit",
+    "familyName": "Khan",
+    "alternateName": ["mumitkhan", "mumit-1"],
     "url": "https://mumitkhan.vercel.app/",
-    "image": "https://mumitkhan.vercel.app/profile.jpeg",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://mumitkhan.vercel.app/profile.jpeg",
+      "width": 800,
+      "height": 1000
+    },
     "jobTitle": "Web Developer",
-    "description": "React web developer and CSE student at BRAC University, Dhaka. I build fast, responsive web interfaces.",
+    "description": "Mumit Khan is a React and JavaScript web developer and Computer Science & Engineering student at BRAC University, Dhaka, Bangladesh. He builds fast, responsive web interfaces using React, Tailwind CSS, and Firebase.",
     "email": "mumitkhan85@gmail.com",
+    "nationality": {
+      "@type": "Country",
+      "name": "Bangladesh"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dhaka",
+      "addressCountry": "BD"
+    },
     "alumniOf": {
       "@type": "CollegeOrUniversity",
+      "@id": "https://www.bracu.ac.bd/",
       "name": "BRAC University",
       "address": {
         "@type": "PostalAddress",
@@ -61,17 +87,65 @@
         "addressCountry": "BD"
       }
     },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Dhaka",
-      "addressCountry": "BD"
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Web Developer",
+      "occupationLocation": {
+        "@type": "City",
+        "name": "Dhaka"
+      },
+      "skills": "React, JavaScript, Tailwind CSS, Firebase, Vite, Framer Motion, HTML5, CSS3"
     },
+    "knowsAbout": [
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "Firebase",
+      "Vite",
+      "Framer Motion",
+      "Web Development",
+      "Frontend Development",
+      "HTML5",
+      "CSS3",
+      "React Router",
+      "Node.js"
+    ],
     "sameAs": [
       "https://github.com/mumit-1",
       "https://www.linkedin.com/in/mumit",
-      "https://www.instagram.com/mumittt_/"
-    ],
-    "knowsAbout": ["React", "JavaScript", "Tailwind CSS", "Firebase", "Vite", "Framer Motion", "Web Development"]
+      "https://www.instagram.com/mumittt_/",
+      "https://www.facebook.com/profile.php?id=100076425950558"
+    ]
+  }
+  </script>
+
+  <!-- ─── JSON-LD: WebSite (enables Google Sitelinks search box) ───────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://mumitkhan.vercel.app/#website",
+    "url": "https://mumitkhan.vercel.app/",
+    "name": "Mumit Khan — Portfolio",
+    "description": "Personal portfolio of Mumit Khan, React web developer and CSE student at BRAC University.",
+    "author": {
+      "@id": "https://mumitkhan.vercel.app/#person"
+    },
+    "inLanguage": "en-US"
+  }
+  </script>
+
+  <!-- ─── JSON-LD: ProfilePage (tells Google this IS a person's profile) ─ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "dateCreated": "2025-01-01",
+    "dateModified": "2025-07-14",
+    "url": "https://mumitkhan.vercel.app/",
+    "mainEntity": {
+      "@id": "https://mumitkhan.vercel.app/#person"
+    }
   }
   </script>
 
@@ -95,6 +169,37 @@
 
 <body>
   <div id="root"></div>
+
+  <!-- ─── Noscript / crawler fallback ─────────────────────────────────────
+       Googlebot and other crawlers that don't execute JS see this content.
+       It mirrors the key on-page text so name searches can index correctly.
+  ──────────────────────────────────────────────────────────────────────── -->
+  <noscript>
+    <main>
+      <h1>Mumit Khan — React &amp; Web Developer</h1>
+      <p>
+        Mumit Khan is a React and JavaScript web developer and Computer Science &amp; Engineering student
+        at BRAC University, Dhaka, Bangladesh. He builds fast, responsive web interfaces using React,
+        Tailwind CSS, Firebase, and Framer Motion.
+      </p>
+      <h2>About Mumit Khan</h2>
+      <p>
+        Mumit Khan is a CSE student at BRAC University who specialises in frontend web development.
+        He works mostly in React, turning designs into responsive interfaces with clean state management
+        and intentional motion. Projects include a fantasy-cricket app (Dream 11), a gadget e-commerce
+        storefront (GadgetHaven), and an auth-protected career counseling platform.
+      </p>
+      <h2>Skills</h2>
+      <p>React, JavaScript (ES6+), Tailwind CSS, Firebase, Vite, Framer Motion, React Router, HTML5, CSS3, Git, GitHub, Node.js</p>
+      <h2>Education</h2>
+      <p>BSc in Computer Science &amp; Engineering — BRAC University, Dhaka, Bangladesh</p>
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:mumitkhan85@gmail.com">mumitkhan85@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/mumit-1">github.com/mumit-1</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/mumit">linkedin.com/in/mumit</a></p>
+    </main>
+  </noscript>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
